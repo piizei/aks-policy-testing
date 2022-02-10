@@ -10,7 +10,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '401b7b13-d433-46ea-9138-34d662b513fe'
+  dockerRegistryServiceConnection: acr
   imageRepository: 'test/node-web-app-win'
   containerRegistry: 'crweupjdev.azurecr.io'
   dockerfilePath: '**/win.dockerfile'
