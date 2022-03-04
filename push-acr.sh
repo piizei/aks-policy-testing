@@ -1,4 +1,4 @@
 #!/bin/bash
-az acr login --name crweupjdev
-docker push crweupjdev.azurecr.io/test/node-web-app
-docker push crweupjdev.azurecr.io/test/node-web-app-win
+az acr login --name $1
+docker push $1.azurecr.io/test/node-web-app
+docker push $1.azurecr.io/test/node-web-app-win

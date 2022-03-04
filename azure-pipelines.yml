@@ -12,7 +12,6 @@ variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: acr
   imageRepository: 'test/node-web-app-win'
-  containerRegistry: 'crweupjdev.azurecr.io'
   dockerfilePath: '**/win.dockerfile'
   tag: '$(Build.BuildId)'
 

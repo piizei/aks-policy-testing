@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deployment
+  name: app-deployment-2
   labels:
     app: app1
 spec:
@@ -20,29 +20,11 @@ spec:
       - name: frontend
         image: CHANGEME.azurecr.io/test/node-web-app-win:latest
         ports:
-        - containerPort: 8080
-        env:
-        - name: PROXY
-          value: "true"
-        - name: PROXY_TARGET
-          value: "http://localhost:3000"
-      - name: backend
-        image: CHANGEME.azurecr.io/test/node-web-app-win:latest
-        ports:
         - containerPort: 3000
         env:
         - name: PORT
           value: "3000"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: feservice
-spec:
-  type: ClusterIP
-  selector:
-    app: app1
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8080
+        - name: PROXY
+          value: "true"
+        - name: PROXY_TARGET
+          value: "http://localhost:8080"
